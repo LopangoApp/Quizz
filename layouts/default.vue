@@ -54,8 +54,6 @@
     color: #cccccc;
   }
 
-
-
   /* STRUCTURE */
 
   .wrapper {

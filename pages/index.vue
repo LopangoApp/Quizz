@@ -1,9 +1,11 @@
 <template>
-  <AuthForm :SubmitButtonName="'Se connecter'"/>
+  <AuthForm SubmitButtonName="Se connecter" methode="signin"/>
 </template>
 
 <script>
-export default {}
+export default {
+  
+}
 </script>
 
 <style >

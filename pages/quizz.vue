@@ -6,7 +6,7 @@
         </p>
       </div>
       <div class="block-item right">
-        <button class="btn facebook" v-for="response in responses"><i class="fab fa-facebook-f"></i><span>{{response}}</span></button>
+        <button class="btn facebook" :key="index" v-for="(response, index) in responses"><i class="fab fa-facebook-f"></i><span>{{response}}</span></button>
       </div>
     </div>
 </template>
@@ -17,7 +17,7 @@ export default {
     layout : 'quizz',
     data() {
       return {
-        responses: ['test1', 'test2']
+        responses: ['test1', 'test2', 'testl']
       }
     },
 }
@@ -30,7 +30,7 @@ export default {
     align-items: center;
     height: 100%;
     font-family: "Monsterrat", sans-serif;
-    background: url('~assets/images/back.jpg');
+    background: url('~assets/images/back.jpg') no-repeat center;
     background-repeat: no-repeat;
     background-size: cover;
     }
@@ -42,10 +42,7 @@ export default {
       font-size: 16px;
       color: #666;
       }
-      body {
-      background: url("/uploads/media/default/0001/01/49bff73f282c2c21f3341f1fe457fe35337b1792.jpeg") no-repeat center;
-      background-size:cover;
-      }
+    
       h1 {
       margin: 0 0 10px 0;
       font-weight: 400;

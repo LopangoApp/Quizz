@@ -9,9 +9,9 @@
     </div>
 
     <!-- Login Form -->
-    <form>
-      <input type="email" class="fadeIn second" name="login" placeholder="Email">
-      <input type="text" class="fadeIn third" name="login" placeholder="Mot de passe">
+    <form @submit.prevent="submitAuth">
+      <input type="email" class="fadeIn second" name="login" v-model="email" placeholder="Email" required>
+      <input type="text" class="fadeIn third" name="login" v-model="pwd" placeholder="Mot de passe" required>
       <button class="fadeIn fourth" type="submit">{{SubmitButtonName}}</button>
     </form>
 
@@ -25,9 +25,28 @@
 
 <script>
 export default {
+  data (){
+    return{
+      email : '',
+      pwd : ''
+    }
+  },
   props : [
-    'SubmitButtonName'
-  ]
+    'SubmitButtonName',
+    'methode'
+  ],
+  methods : {
+    async submitAuth (){
+     
+      if(this.methode === "signin"){
+        console.log("signin ------------------------------------>")
+      }      
+      if(this.methode === "signup"){
+        console.log("signup ------------------------------------>")
+      }
+    }
+  }
+
 }
 </script>
 
